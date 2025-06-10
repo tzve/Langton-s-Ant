@@ -208,7 +208,13 @@ public class DirectorPracticaLangton {
 			}
 		}
 		
-		bw.write(x+";"+y+";"+xPosicionTodasHormiga+";"+yPosicionTodasHormiga+";"+tabla+";"+numMovimientoEnCurso+"\n");bw.flush();
+                if (xPosicionTodasHormiga.endsWith(","))
+                        xPosicionTodasHormiga = xPosicionTodasHormiga.substring(0, xPosicionTodasHormiga.length()-1);
+                if (yPosicionTodasHormiga.endsWith(","))
+                        yPosicionTodasHormiga = yPosicionTodasHormiga.substring(0, yPosicionTodasHormiga.length()-1);
+
+                bw.write(x+";"+y+";"+xPosicionTodasHormiga+";"+yPosicionTodasHormiga+";"+tabla+";"+numMovimientoEnCurso+"\n");
+                bw.flush();
 		
 	}//guardarTablero()
 	
